@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Header from './component/header';
+import Footer from './component/footer';
+import Exercise1 from './component/exercise1';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{
+        bgcolor: '#fefae0',
+        display: 'grid', 
+        gridTemplateRows: '10vh 85vh 5vh',
+      }}
+    >
+      <Header />
+
+      <Routes>
+        <Route exact path="purwadhika-react-exercise" element={<Exercise1 />} />
+        {/* <Route exact path="exercise-2" element={<Exercise2 />} />
+        <Route exact path="exercise-3" element={<Exercise2 />} /> */}
+      </Routes>
+
+      <Footer />
+    </Box>
   );
 }
-
-export default App;
