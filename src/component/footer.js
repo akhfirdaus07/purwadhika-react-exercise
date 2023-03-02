@@ -1,30 +1,26 @@
 import * as React from 'react';
-import { loadCSS } from 'fg-loadcss';
 import Box from '@mui/material/Box';
-import { green } from '@mui/material/colors';
-import Icon from '@mui/material/Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Typography } from '@mui/material';
+import Link from '@mui/material/Link';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 export default function Footer() {
-  React.useEffect(() => {
-    const node = loadCSS(
-      'https://kit.fontawesome.com/3f64b12415.css',
-      // Inject before JSS
-      document.querySelector('#font-awesome-css') || document.head.firstChild,
+    return (
+        <Box
+        sx={{
+            gridRow:'3/4',
+            bgcolor: '#ccd5ae',
+            display:'flex', gap:1,
+            justifyContent:'center',
+            alignItems:'center',
+        }}
+        >
+            <Typography variant="h8">Copyright © 2023 akhfirdaus07</Typography>
+            <Link href="https://github.com/akhfirdaus07">
+                <FontAwesomeIcon icon={faGithub} size="xl"/>
+            </Link>
+        </Box>
     );
-
-    return () => {
-      node.parentNode.removeChild(node);
-    };
-  }, []);
-
-  return (
-    <Box
-      sx={{
-        gridRow:'3/4',
-        bgcolor: '#ccd5ae',
-      }}
-    >
-      <Icon className="fa-brands fa-github" />
-    </Box>
-  );
 }
