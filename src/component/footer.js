@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '@mui/material';
 import Link from '@mui/material/Link';
-import { hover } from '@testing-library/user-event/dist/hover';
 
 export default function Footer() {
     return (
