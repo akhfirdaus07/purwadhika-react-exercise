@@ -16,13 +16,13 @@ export default function Header(){
         >
             <Typography variant="h5">Purwadhika Module 2 Slide 7 Exercise</Typography>
             <Box sx={{display:'flex', gap:1}}>
-                <Button color="error" variant="outlined" size="large" href='/exercise-1'>
+                <Button color="error" variant="outlined" size="large" href='/purwadhika-react-exercise/exercise-1'>
                     Exercise 1
                 </Button>
-                <Button color="error" variant="outlined" size="large" href='/exercise-2'>
+                <Button color="error" variant="outlined" size="large" href='/purwadhika-react-exercise/exercise-2'>
                     Exercise 2
                 </Button>
-                <Button color="error" variant="outlined" size="large" href='/exercise-3'>
+                <Button color="error" variant="outlined" size="large" href='/purwadhika-react-exercise/exercise-3'>
                     Exercise 3
                 </Button>
             </Box>
