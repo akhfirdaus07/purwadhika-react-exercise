@@ -1,7 +1,6 @@
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import { Typography } from '@mui/material';
-import { Link } from "react-router-dom";
 
 export default function Header(){
     return(
@@ -17,14 +16,14 @@ export default function Header(){
         >
             <Typography variant="h5">Purwadhika Module 2 Slide 7 Exercise</Typography>
             <Box sx={{display:'flex', gap:1}}>
-                <Button color="error" variant="outlined" size="large">
-                    <Link to='/exercise-1'>Exercise 1</Link>
+                <Button color="error" variant="outlined" size="large" href='/exercise-1'>
+                    Exercise 1
                 </Button>
-                <Button color="error" variant="outlined" size="large" >
-                    <Link to='/exercise-2'>Exercise 2</Link>
+                <Button color="error" variant="outlined" size="large" href='/exercise-2'>
+                    Exercise 2
                 </Button>
-                <Button color="error" variant="outlined" size="large">
-                <Link to='/exercise-3'>Exercise 3</Link>
+                <Button color="error" variant="outlined" size="large" href='/exercise-3'>
+                    Exercise 3
                 </Button>
             </Box>
         </Box>
