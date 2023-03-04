@@ -20,8 +20,9 @@ export default function App() {
 
       <Routes>
         <Route exact path="/purwadhika-react-exercise" element={<Exercise1 />} />
-        <Route path="/exercise-2" element={<Exercise2 />} />
-        <Route path="/exercise-3" element={<Exercise3 />} />
+        <Route path="/purwadhika-react-exercise/exercise-1" element={<Exercise1 />} />
+        <Route path="/purwadhika-react-exercise/exercise-2" element={<Exercise2 />} />
+        <Route path="/purwadhika-react-exercise/exercise-3" element={<Exercise3 />} />
       </Routes>
 
       <Footer />
