@@ -3,6 +3,9 @@ import Box from '@mui/material/Box';
 import Header from './component/header';
 import Footer from './component/footer';
 import Exercise1 from './component/exercise1';
+import Exercise2 from './component/exercise2';
+import Exercise3 from './component/exercise3';
+
 import { Route, Routes } from 'react-router-dom';
 
 export default function App() {
@@ -17,8 +20,8 @@ export default function App() {
 
       <Routes>
         <Route exact path="purwadhika-react-exercise" element={<Exercise1 />} />
-        {/* <Route exact path="exercise-2" element={<Exercise2 />} />
-        <Route exact path="exercise-3" element={<Exercise2 />} /> */}
+        <Route path="exercise-2" element={<Exercise2 />} />
+        <Route path="exercise-3" element={<Exercise3 />} />
       </Routes>
 
       <Footer />

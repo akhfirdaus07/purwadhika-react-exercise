@@ -3,12 +3,12 @@ import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
-export default function Exercise1(){
+export default function Exercise2(){
     let [count, setCount]=useState(0);
     return(
         <Box sx={{
             bgcolor:'#d4a373',
-            margin:30,
+            margin:15,
             marginLeft:60,
             marginRight:60,
             borderRadius:10,
