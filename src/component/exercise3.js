@@ -1,17 +1,35 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import { TextField } from '@mui/material';
 
 export default function Exercise3(){
-    useEffect(()=>{document.title='React Exercise 3'})
+    useEffect(()=>{document.title='React Exercise 3'});
 
+    const itemList=[
+        "Banana", "Apple", "Orange", "Mango", "Pineapple", "Watermelon", "Strawberry", "Persimmon"
+    ]
+    const [filteredList, setFilteredList] = new useState(itemList);    
+    
     const styles={
         paperContainer:{
             backgroundImage: `linear-gradient(to bottom right, orange, red, purple)`
         }
     };
+
+    const filterBySearch = (event) => {
+        // Access input value
+        const query = event.target.value;
+        // Create copy of item list
+        var updatedList = [...itemList];
+        // Include all elements which includes the search query
+        updatedList = updatedList.filter((item) =>{ 
+          return item.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        });
+        // Trigger render with updated values
+        setFilteredList(updatedList);
+      };
     
     return(
         <Box sx={{
@@ -34,7 +52,7 @@ export default function Exercise3(){
                     alignItems:'center',
                 }}>
                     <Typography variant="h6">Search</Typography>
-                    <TextField id="outlined-basic" label="Keyword" variant="outlined"/>
+                    <TextField id="outlined-basic" label="Keyword" variant="outlined" onChange={filterBySearch}/>
                 </Box>
                 
                 <Box sx={{    
@@ -43,14 +61,9 @@ export default function Exercise3(){
                     gridTemplateColumns: "1fr 1fr",
                     gap:3, p:1,
                 }}>
-                    <Button color="success" variant="contained">Banana</Button>
-                    <Button color="success" variant="contained">Apple</Button>
-                    <Button color="success" variant="contained">Orange</Button>
-                    <Button color="success" variant="contained">Mango</Button>
-                    <Button color="success" variant="contained">Pineapple</Button>
-                    <Button color="success" variant="contained">Watermelon</Button>
-                    <Button color="success" variant="contained">Strawberry</Button>
-                    <Button color="success" variant="contained">Persimmon</Button>
+                    {filteredList.map((item,index)=>(
+                        <Button color="success" variant="contained">{item}</Button>
+                    ))}
                 </Box>
             </Box>
         </Box>
