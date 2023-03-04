@@ -42,7 +42,7 @@ export default function Exercise3(){
                 flexDirection:'column',
                 justifyContent:'center',
                 alignItems:'center',
-                gap:3,borderRadius:5,p:3, width:0.3,
+                gap:3,borderRadius:5,p:3, width:0.4,
             }} >
                 <Box sx={{    
                     gridRow:'2/3',

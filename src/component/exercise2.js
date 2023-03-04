@@ -28,7 +28,7 @@ export default function Exercise1(){
             <Typography variant="h3">Create a stopwatch application</Typography>
             <Box sx={{
                 bgcolor:'lightgray',
-                borderRadius:5,p:5,
+                borderRadius:5,p:5, width:0.4,
                 display:'flex', 
                 flexDirection:'column',
                 justifyContent:'center',
