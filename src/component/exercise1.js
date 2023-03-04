@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
 export default function Exercise1(){
-    let [count, setCount]=useState(0);
+    const [count, setCount]=useState(0);
     useEffect(()=>{
         document.title='React Exercise 1'
     });
@@ -34,7 +34,7 @@ export default function Exercise1(){
                         <Button color="warning" variant="contained" size="small" onClick={()=>{setCount(count-1)}}>
                             Decrease
                         </Button>
-                        <Button color="error" variant="contained" size="small" onClick={()=>{setCount(count=0)}}>
+                        <Button color="error" variant="contained" size="small" onClick={()=>{setCount(count*0)}}>
                             Reset
                         </Button>
                 </Box>

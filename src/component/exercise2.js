@@ -4,10 +4,34 @@ import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
 export default function Exercise1(){
-    let [count, setCount]=useState(0);
+    const [time, setTime]=useState(0);
+    const [start, setStart]=useState(false);
+    
     useEffect(()=>{
         document.title='React Exercise 2'
-    });
+
+        let interval=null;
+        if (start) {
+            interval = setInterval(()=>{
+                setTime(prevTime => prevTime + 10)
+            },10)
+        } else {clearInterval(interval)}
+
+        return()=>clearInterval(interval);
+    }, [start]);
+    
+    // function startWatch(){
+    //     countRef.current = setInterval(() => {
+    //       setTimer((timer) => timer + 1)
+    //     }, 1000)
+    // };
+    // function stopWatch(){
+    //     clearInterval(countRef.current)
+    // };
+    // function resetWatch(){
+    //     clearInterval(countRef.current)
+    //     setTimer(0)
+    // };
     return(
         <Box sx={{
             gridRow:'2/3',display:'flex', gap:8,m:10,
@@ -22,21 +46,25 @@ export default function Exercise1(){
                 justifyContent:'center',
                 alignItems:'center',
             }}>
-                <Typography variant="h1">{count}</Typography>
-                    <Box sx={{    
-                        gridRow:'2/3',
-                        display:'flex', 
-                        gap:1, marginTop:4,
-                    }}>
-                        <Button color="info" variant="contained" size="small" onClick={()=>{setCount(count+1)}}>
-                            Start
-                        </Button>
-                        <Button color="warning" variant="contained" size="small" onClick={()=>{setCount(count-1)}}>
-                            Stop
-                        </Button>
-                        <Button color="error" variant="contained" size="small" onClick={()=>{setCount(count=0)}}>
-                            Reset
-                        </Button>
+                <Typography variant="h1">
+                    {("0"+Math.floor((time/60000)%60)).slice(-2)}:
+                    {("0"+Math.floor((time/1000)%60)).slice(-2)}:
+                    {("0"+(time/10) % 1000).slice(-2)}
+                </Typography>
+                <Box sx={{    
+                    gridRow:'2/3',
+                    display:'flex', 
+                    gap:5, marginTop:4,
+                }}>
+                    <Button color="info" variant="contained" size="medium" onClick={()=>setStart(true)}>
+                        Start
+                    </Button>
+                    <Button color="warning" variant="contained" size="medium" onClick={()=>setStart(false)}>
+                        Stop
+                    </Button>
+                    <Button color="error" variant="contained" size="medium" onClick={()=>{setTime(0);setStart(false);}}>
+                        Reset
+                    </Button>
                 </Box>
             </Box>
         </Box>
