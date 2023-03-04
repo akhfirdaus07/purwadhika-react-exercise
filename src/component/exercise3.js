@@ -42,8 +42,8 @@ export default function Exercise3(){
                 flexDirection:'column',
                 justifyContent:'center',
                 alignItems:'center',
-                gap:3,borderRadius:5,p:3,
-            }}>
+                gap:3,borderRadius:5,p:3, width:0.3,
+            }} >
                 <Box sx={{    
                     gridRow:'2/3',
                     display:'flex', 
@@ -57,12 +57,11 @@ export default function Exercise3(){
                 
                 <Box sx={{    
                     gridRow:'2/3',
-                    display:'grid', 
-                    gridTemplateColumns: "1fr 1fr",
-                    gap:3, p:1,
-                }}>
+                    display:"flex", flexWrap:'wrap', justifyContent:'center',
+                    gap:3, 
+                }} >
                     {filteredList.map((item,index)=>(
-                        <Button color="success" variant="contained">{item}</Button>
+                        <Button sx={{width:150}} color="success" variant="contained">{item}</Button>
                     ))}
                 </Box>
             </Box>
