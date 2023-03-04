@@ -4,9 +4,15 @@ import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
 export default function Exercise3(){
-    let [count, setCount]=useState(0);
+    const [count, setCount]=useState(0);
+
+    const styles={
+        paperContainer:{
+            backgroundImage: `linear-gradient(to bottom right, orange, red, purple)`
+        }
+    }
     return(
-        <Box sx={{
+        <Box style={styles.paperContainer} sx={{
             bgcolor:'#d4a373',
             margin:15,
             marginLeft:60,
@@ -37,3 +43,5 @@ export default function Exercise3(){
         </Box>
     )
 }
+
+// Banana Apple Orange Mango Pineapple Watermelon Strawberry Persimmon
