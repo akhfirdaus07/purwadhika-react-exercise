@@ -20,18 +20,6 @@ export default function Exercise1(){
         return()=>clearInterval(interval);
     }, [start]);
     
-    // function startWatch(){
-    //     countRef.current = setInterval(() => {
-    //       setTimer((timer) => timer + 1)
-    //     }, 1000)
-    // };
-    // function stopWatch(){
-    //     clearInterval(countRef.current)
-    // };
-    // function resetWatch(){
-    //     clearInterval(countRef.current)
-    //     setTimer(0)
-    // };
     return(
         <Box sx={{
             gridRow:'2/3',display:'flex', gap:8,m:10,
